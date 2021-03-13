@@ -3,7 +3,7 @@
 </div>
 
 > A simple Node.js wrapper for [youtube-dl](https://github.com/ytdl-org/youtube-dl).
-
+> Customized for [DisTube.js.org](https://github.com/distubejs/youtube-dl-exec)
 ## Why
 
 - Auto install the latest `youtube-dl` version available.
@@ -13,13 +13,13 @@
 ## Install
 
 ```bash
-$ npm install youtube-dl-exec --save
+$ npm install @distube/youtube-dl --save
 ```
 
 ## Usage
 
 ```js
-const youtubedl = require('youtube-dl-exec')
+const youtubedl = require('@distube/youtube-dl')
 
 youtubedl('https://example.com', {
   dumpJson: true,
@@ -92,9 +92,9 @@ The default binary file could be `youtube-dl` or `youtube-dl.exe`, depending of 
 
 It determines the architecture of the machine that will use the `youtube-dl` binary.
 
-The default value will computed from `process.platform`, being `'unix'` or `'windows'`.
+The default value will computed from `process.platform`, being `'unix'` or `'win32'`.
 
-## License
+## Original License
 
 **youtube-dl-exec** © [microlink.io](https://microlink.io), released under the [MIT](https://github.com/microlinkhq/youtube-dl-exec/blob/master/LICENSE.md) License.<br>
 Authored and maintained by [microlink.io](https://microlink.io) with help from [contributors](https://github.com/microlinkhq/youtube-dl-exec/contributors).
