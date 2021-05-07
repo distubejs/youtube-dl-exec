@@ -2,9 +2,12 @@
   "name": "@distube/youtube-dl",
   "description": "A simple Node.js wrapper for youtube-dl. Made for DisTube.js.org",
   "homepage": "https://distube.js.org",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "src/index.js",
-  "author": "Skick",
+  "author": {
+    "email": "skick1234@gmail.com",
+    "name": "Skick"
+  },
   "contributors": [
     {
       "name": "Kiko Beats",
@@ -28,15 +31,14 @@
   },
   "keywords": [
     "binary",
+    "distube",
+    "distubejs",
     "nodejs",
     "youtube-dl",
     "youtube-dl-wrapper",
-    "youtube-downloader",
-    "distubejs",
-    "distube"
+    "youtube-downloader"
   ],
   "dependencies": {
-    "bin-version-check-cli": "~3.0.0",
     "dargs": "~8.0.0",
     "execa": "~5.0.0",
     "get-stream": "~6.0.1",
@@ -47,8 +49,8 @@
     "p-reflect": "~3.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
+    "@commitlint/cli": "~12.1.1",
+    "@commitlint/config-conventional": "~12.1.1",
     "ava": "latest",
     "conventional-github-releaser": "latest",
     "coveralls": "latest",
@@ -56,13 +58,13 @@
     "git-authors-cli": "latest",
     "git-dirty": "latest",
     "lint-staged": "latest",
-    "npm-check-updates": "latest",
+    "npm-check-updates": "~11.5.10",
     "nyc": "latest",
     "prettier-standard": "latest",
     "simple-git-hooks": "latest",
     "standard": "latest",
     "standard-markdown": "latest",
-    "standard-version": "latest"
+    "standard-version": "~9.3.0"
   },
   "engines": {
     "node": ">= 12"
@@ -72,7 +74,6 @@
     "src"
   ],
   "scripts": {
-    "check": "bin-version-check python '>=2'",
     "clean": "rm -rf node_modules",
     "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
