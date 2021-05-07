@@ -2,7 +2,7 @@
   "name": "@distube/youtube-dl",
   "description": "A simple Node.js wrapper for youtube-dl. Made for DisTube.js.org",
   "homepage": "https://distube.js.org",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "src/index.js",
   "author": {
     "email": "skick1234@gmail.com",
@@ -39,7 +39,7 @@
     "youtube-downloader"
   ],
   "dependencies": {
-    "dargs": "~8.0.0",
+    "dargs": "~7.0.0",
     "execa": "~5.0.0",
     "get-stream": "~6.0.1",
     "got": "~11.8.2",
