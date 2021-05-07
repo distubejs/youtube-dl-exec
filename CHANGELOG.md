@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/microlinkhq/youtube-dl-exec/compare/v1.2.2...v1.2.3) (2021-04-28)
+
+### [1.2.2](https://github.com/microlinkhq/youtube-dl-exec/compare/v1.2.1...v1.2.2) (2021-04-26)
+
+### [1.2.1](https://github.com/microlinkhq/youtube-dl-exec/compare/v1.2.0...v1.2.1) (2021-04-14)
+
+
+### Bug Fixes
+
+* single-character-flags with values are now supported ([c7228c0](https://github.com/microlinkhq/youtube-dl-exec/commit/c7228c0e0464bd8aa9753043a5f88b6a76eb826e))
+* updated test file ([3d45d24](https://github.com/microlinkhq/youtube-dl-exec/commit/3d45d248165c6fcc4c06f2195e6e911199163966))
+
+## [1.2.0](https://github.com/microlinkhq/youtube-dl-exec/compare/v1.1.3...v1.2.0) (2021-04-02)
+
+
+### Features
+
+* add raw method ([6751290](https://github.com/microlinkhq/youtube-dl-exec/commit/6751290e306a86d469c160e419ddda3fa3d7ac14))
+
+### [1.1.3](https://github.com/microlinkhq/youtube-dl-exec/compare/v1.1.2...v1.1.3) (2021-03-13)
+
+
+### Bug Fixes
+
+* correct file name variable ([8b2d716](https://github.com/microlinkhq/youtube-dl-exec/commit/8b2d716f1c4a6bfd8ed8de9429bca4fc691ce967))
+* correct platform value on windows ([69bee90](https://github.com/microlinkhq/youtube-dl-exec/commit/69bee904bdd86cc89afae8458dbeed5d62f4b4c3))
+* default binary file doesn't depend on `YOUTUBE_DL_PLATFORM` ([45bad59](https://github.com/microlinkhq/youtube-dl-exec/commit/45bad5964f03bd7490ac9cdc0b9694397cc257d7))
+
 ### [1.1.2](https://github.com/microlinkhq/youtube-dl-exec/compare/v1.1.1...v1.1.2) (2021-03-09)
 
 ### [1.1.1](https://github.com/microlinkhq/youtube-dl-exec/compare/v1.1.0...v1.1.1) (2021-03-04)

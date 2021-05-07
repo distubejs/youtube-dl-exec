@@ -7,11 +7,17 @@
   "author": "Skick",
   "contributors": [
     {
-      "email": "hello@microlink.io",
-      "name": "microlink.io",
-      "url": "https://microlink.io"
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
     },
-    "Kiko Beats <josefrancisco.verdu@gmail.com>"
+    {
+      "name": "Felix Kaiser",
+      "email": "felixkaiser2000@protonmail.com"
+    },
+    {
+      "name": "Philipp Fruck",
+      "email": "dev@p-fruck.de"
+    }
   ],
   "repository": {
     "type": "git",
@@ -30,15 +36,15 @@
     "distube"
   ],
   "dependencies": {
-    "bin-version-check-cli": "~2.0.0",
-    "dargs": "~7.0.0",
+    "bin-version-check-cli": "~3.0.0",
+    "dargs": "~8.0.0",
     "execa": "~5.0.0",
-    "get-stream": "~6.0.0",
+    "get-stream": "~6.0.1",
     "got": "~11.8.2",
     "is-unix": "~1.0.0",
     "mkdirp": "~1.0.4",
     "p-event": "~4.2.0",
-    "p-reflect": "~2.1.0"
+    "p-reflect": "~3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -49,11 +55,11 @@
     "finepack": "latest",
     "git-authors-cli": "latest",
     "git-dirty": "latest",
-    "husky": "latest",
     "lint-staged": "latest",
     "npm-check-updates": "latest",
     "nyc": "latest",
     "prettier-standard": "latest",
+    "simple-git-hooks": "latest",
     "standard": "latest",
     "standard-markdown": "latest",
     "standard-version": "latest"
@@ -88,12 +94,6 @@
       "@commitlint/config-conventional"
     ]
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "package.json": [
       "finepack"
@@ -104,5 +104,9 @@
     "*.md": [
       "standard-markdown"
     ]
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx commitlint --edit",
+    "pre-commit": "npx lint-staged"
   }
 }

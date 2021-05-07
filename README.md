@@ -8,7 +8,7 @@
 
 - Auto install the latest `youtube-dl` version available.
 - Executes any command in a efficient way.
-- Intuitive interface.
+- Promise & Stream interface support.
 
 ## Install
 
@@ -22,7 +22,7 @@ $ npm install @distube/youtube-dl --save
 const youtubedl = require('@distube/youtube-dl')
 
 youtubedl('https://example.com', {
-  dumpJson: true,
+  dumpSingleJson: true,
   noWarnings: true,
   noCallHome: true,
   noCheckCertificate: true,
@@ -58,15 +58,31 @@ Any flag supported by `youtube-dl`.
 
 #### options
 
-Type: `object`
-
 Any option provided here will passed to [execa#options](https://github.com/sindresorhus/execa#options).
+
+### youtubedl.raw(url, [flags], [options])
+
+It's the same than the main method but it will return the raw subprocess object:
+
+```js
+const youtubedl = require('youtube-dl-exec')
+const fs = require('fs')
+
+const subprocess = youtubedl.raw('https://example.com', { dumpSingleJson: true })
+
+console.log(`Running subprocess as ${subprocess.pid}`)
+
+subprocess.stdout.pipe(fs.createWriteStream('stdout.txt'))
+subprocess.stderr.pipe(fs.createWriteStream('stderr.txt'))
+
+setTimeout(subprocess.cancel, 30000)
+```
 
 ## Environment variables
 
 The environment variables are taken into account when you perform a `npm install` in a project that contains `youtube-dl-exec` dependency.
 
-They setup the download configuration for getting the `youtube-dl` binary file. 
+They setup the download configuration for getting the `youtube-dl` binary file.
 
 These variables can be
 
@@ -97,6 +113,6 @@ The default value will computed from `process.platform`, being `'unix'` or `'win
 ## Original License
 
 **youtube-dl-exec** © [microlink.io](https://microlink.io), released under the [MIT](https://github.com/microlinkhq/youtube-dl-exec/blob/master/LICENSE.md) License.<br>
-Authored and maintained by [microlink.io](https://microlink.io) with help from [contributors](https://github.com/microlinkhq/youtube-dl-exec/contributors).
+Authored and maintained by [Kiko Beats](https://kikobeats.com) with help from [contributors](https://github.com/microlinkhq/youtube-dl-exec/contributors).
 
 > [microlink.io](https://microlink.io) · GitHub [microlink.io](https://github.com/microlinkhq) · Twitter [@microlinkhq](https://twitter.com/microlinkhq)
