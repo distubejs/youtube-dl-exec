@@ -2,7 +2,7 @@
   "name": "@distube/youtube-dl",
   "description": "A simple Node.js wrapper for youtube-dl. Made for DisTube.js.org",
   "homepage": "https://distube.js.org",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "src/index.js",
   "author": {
     "email": "skick1234@gmail.com",
