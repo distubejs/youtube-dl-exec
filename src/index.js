@@ -1,5 +1,6 @@
 'use strict'
 
+const download = require('./download')
 const dargs = require('dargs')
 const execa = require('execa')
 
@@ -19,3 +20,5 @@ module.exports = (url, flags, opts) => raw(url, flags, opts).then(parse)
 module.exports.raw = raw
 
 module.exports.args = args
+
+module.exports.download = download

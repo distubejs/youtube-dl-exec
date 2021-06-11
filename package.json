@@ -2,7 +2,7 @@
   "name": "@distube/youtube-dl",
   "description": "A simple Node.js wrapper for youtube-dl. Made for DisTube.js.org",
   "homepage": "https://distube.js.org",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "main": "src/index.js",
   "author": {
     "email": "skick1234@gmail.com",
@@ -40,7 +40,7 @@
   ],
   "dependencies": {
     "dargs": "~7.0.0",
-    "execa": "~5.0.0",
+    "execa": "~5.1.1",
     "get-stream": "~6.0.1",
     "got": "~11.8.2",
     "is-unix": "~1.0.0",
@@ -49,18 +49,18 @@
     "p-reflect": "~3.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "~12.1.1",
-    "@commitlint/config-conventional": "~12.1.1",
+    "@commitlint/cli": "~12.1.4",
+    "@commitlint/config-conventional": "~12.1.4",
     "ava": "latest",
-    "conventional-github-releaser": "latest",
+    "conventional-github-releaser": "~3.1.1",
     "coveralls": "latest",
     "finepack": "latest",
     "git-authors-cli": "latest",
     "git-dirty": "latest",
     "lint-staged": "latest",
-    "npm-check-updates": "~11.5.10",
+    "npm-check-updates": "~11.6.0",
     "nyc": "latest",
-    "prettier-standard": "latest",
+    "prettier-standard": "~15.0.1",
     "simple-git-hooks": "latest",
     "standard": "latest",
     "standard-markdown": "latest",
@@ -89,25 +89,5 @@
     "update": "ncu -u",
     "update:check": "ncu -- --error-level 2"
   },
-  "license": "MIT",
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "package.json": [
-      "finepack"
-    ],
-    "*.js": [
-      "prettier-standard"
-    ],
-    "*.md": [
-      "standard-markdown"
-    ]
-  },
-  "simple-git-hooks": {
-    "commit-msg": "npx commitlint --edit",
-    "pre-commit": "npx lint-staged"
-  }
+  "license": "MIT"
 }
