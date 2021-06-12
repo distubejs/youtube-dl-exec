@@ -37,7 +37,7 @@ const download = async (url = YOUTUBE_DL_HOST) => {
     msg = version
   }
   const [fileData] = await Promise.all([buffer, mkdirp(YOUTUBE_DL_DIR)])
-  fs.writeFileSync(YOUTUBE_DL_PATH, fileData)
+  fs.writeFileSync(YOUTUBE_DL_PATH, fileData, { mode: 493 })
   return msg
 }
 
