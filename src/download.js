@@ -1,7 +1,7 @@
 'use strict'
 
 const getStream = require('get-stream')
-const fs = require('fs').promises
+const fs = require('fs')
 const pEvent = require('p-event')
 const mkdirp = require('mkdirp')
 
@@ -24,19 +24,21 @@ const download = async (url = YOUTUBE_DL_HOST) => {
   const stream = got.stream(url)
   const response = await pEvent(stream, 'response')
   const contentType = response.headers['content-type']
-
+  let buffer, msg
   if (BINARY_CONTENT_TYPES.includes(contentType)) {
-    return getStream(stream, { encoding: 'buffer' })
+    buffer = await getStream(stream, { encoding: 'buffer' })
+    msg = `Downloaded ${YOUTUBE_DL_FILENAME} from ${url} successfully!`
+  } else {
+    const [{ assets, tag_name: version }] = JSON.parse(await getStream(stream))
+    const { browser_download_url: downloadUrl } = assets.find(
+      ({ name }) => name === YOUTUBE_DL_FILENAME
+    )
+    buffer = got(downloadUrl).buffer()
+    msg = version
   }
-
-  const [{ assets, tag_name: version }] = JSON.parse(await getStream(stream))
-  const { browser_download_url: downloadUrl } = assets.find(
-    ({ name }) => name === YOUTUBE_DL_FILENAME
-  )
-
-  await Promise.all([got(downloadUrl).buffer(), mkdirp(YOUTUBE_DL_DIR)])
-    .then(([buffer]) => fs.writeFile(YOUTUBE_DL_PATH, buffer, { mode: 493 }))
-  return version
+  const [fileData] = await Promise.all([buffer, mkdirp(YOUTUBE_DL_DIR)])
+  fs.writeFileSync(YOUTUBE_DL_PATH, fileData)
+  return msg
 }
 
 module.exports = download

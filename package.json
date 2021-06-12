@@ -2,7 +2,7 @@
   "name": "@distube/youtube-dl",
   "description": "A simple Node.js wrapper for youtube-dl. Made for DisTube.js.org",
   "homepage": "https://distube.js.org",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "src/index.js",
   "author": {
     "email": "skick1234@gmail.com",
@@ -46,7 +46,7 @@
     "is-unix": "~1.0.0",
     "mkdirp": "~1.0.4",
     "p-event": "~4.2.0",
-    "p-reflect": "~3.0.0"
+    "p-reflect": "~2.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "~12.1.4",
