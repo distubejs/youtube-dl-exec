@@ -20,7 +20,7 @@ const YOUTUBE_DL_PLATFORM =
 
 const YOUTUBE_DL_FILENAME =
   process.env.YOUTUBE_DL_FILENAME ||
-  `youtube-dl${YOUTUBE_DL_PLATFORM === PLATFORM_WIN ? '.exe' : ''}`
+  `yt-dlp${YOUTUBE_DL_PLATFORM === PLATFORM_WIN ? '.exe' : ''}`
 
 const YOUTUBE_DL_PATH = path.join(YOUTUBE_DL_DIR, YOUTUBE_DL_FILENAME)
 
